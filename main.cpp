@@ -6,7 +6,7 @@ using namespace std;
 int main() {
 	greet();
 	
-	/*const char* theword = "yourmom";
+	/*const char* theword = "placeho";
 	const char* useranswer = "_______";
 	int fails = 0;
 	vector<char> incorrect;
