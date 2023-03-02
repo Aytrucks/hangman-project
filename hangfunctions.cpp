@@ -12,7 +12,7 @@ void greet() {
 	std::cin.get();
 	std::cout << "+---+\n";
 	std::cout << "|             O\n";
-	std::cout << "|            -+-\n";
+	std::cout << "|            /|\\\n";
 	std::cout << "|             |\n";
 	std::cout << "|            / \\\n";
 	std::cout << "|\n";
@@ -20,6 +20,87 @@ void greet() {
 	std::cout << "You will have 7 attempts to save Jeffrey, or else he will cease.\n";
 	std::cout << "Good Luck!";
 	std::cin.get();
+}
+
+void Print(string string, bool top, bool bot){
+	if (top) {
+		cout << "-----------------------------------------------"<<endl;
+		cout << "|";
+	}
+	else {
+		cout << "|";
+	}
+	bool front = true;
+	
+	for (int i = string.length(); i < 45; i++) {
+		if (front) {
+			string = string + " ";
+		}
+		else {
+			
+			string = " " + string;
+		}
+		front = !front;
+	}
+
+
+	cout << string.c_str();
+
+
+	if (bot) {
+		cout << "|"<<endl;
+		cout << "-----------------------------------------------" << endl;
+	}
+	else {
+		cout << "|" << endl;
+	}
+}
+
+void DrawHangman(int fail) {
+
+	Print("|", false, false);
+	Print("|", false, false);
+	
+	if (fail >= 1) {
+		Print("O", false, false);
+	}
+	else {
+		Print(" ", false, false);
+	
+	}
+	if (fail == 2) {
+		Print("|", false, false);
+	}
+	if (fail == 3) {
+		Print("/|", false, false);
+	}
+	if (fail >= 4) {
+		Print("/|\\", false, false);
+	}
+	else {
+		Print(" ", false, false);
+	}
+
+
+	if (fail >= 5) {
+		Print("|", false, false);
+	}
+	else {
+		Print(" ", false, false);
+	}
+
+	if (fail == 6) {
+		Print("/ ", false, false);
+	}
+	if (fail >= 7) {
+		Print("/ \\", false, false);
+	}
+	else {
+		Print(" ", false, false);
+	}
+	
+	Print("+-----------+", false, false);
+	Print("|           |", false, false);
 }
 
 void displayfail(int fails) {
